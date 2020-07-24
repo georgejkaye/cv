@@ -1,9 +1,32 @@
 \documentclass[10pt]{article}
 
-\title{George Kaye}
-\author{georgejkaye@gmail.com}
+\usepackage{array, xcolor}
+\usepackage[margin=3cm]{geometry}
+
+\title{\Huge\textbf{George Kaye}}
+\author{georgejkaye@gmail.com $\quad\circ\quad$ \textbf{Github:} georgejkaye}
 \date{}
+	
+\definecolor{lightgray}{gray}{0.8}
+\newcolumntype{L}{>{\raggedleft}p{0.2\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
 
 \begin{document}
 \maketitle
+
+\section*{Education}
+
+\begin{tabular}{L!{\VRule}R}
+    2019-present & \textbf{PhD in Computer Science, University of Birmingham} \\
+    2015-2019 & MSci in Computer Science, University of Birmingham
+\end{tabular}
+
+\section*{Previous Employment}
+
+\begin{tabular}{L!{\VRule}R}
+    2019-2020 & \textbf{Teaching Assistant, University of Birmingham} \\
+    2015-2019 & \textbf{Supermarket Assistant, Waitrose}
+\end{tabular}
+
 \end{document}
