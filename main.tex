@@ -1,10 +1,12 @@
 \documentclass[10pt]{article}
 
-\usepackage{ tgpagella }
-\usepackage{ array, xcolor }
-\usepackage{ enumitem }
-\usepackage[margin=0.7in]{ geometry }
-\usepackage[colorlinks=true,urlcolor=blue]{ hyperref }
+\usepackage{palatino}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{todonotes}
+\usepackage[margin=0.7in]{geometry}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
 
 \newcommand{\stroke}{\hrule\vspace{1em}}
 \newcommand{\tech}[3]{\lang{#1} & \textit{#2 proficiency:} #3}
@@ -26,14 +28,14 @@
 \newcolumntype{R}{p{0.8\textwidth}}
 \newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
 
-\newenvironment{education}[3]{%
-    \noindent{\large{\textbf{#1} \hfill \textit{#2 - #3}}}%
+\newenvironment{education}[2]{%
+    \noindent{\large{\textbf{#1} \hfill #2}}%
     \vspace{0.5em}
 
+    \noindent%
 }{%
     \vspace{0.5em}
 }
-% \newenvironment{educationext}[5]
 \newcommand{\educationsubheader}[2]{%
     \noindent{%
         \large\textit{#1}
@@ -43,232 +45,29 @@
 
     \vspace{0.25em}
 
+    \noindent%
 }%
-\newenvironment{work}[3]{%
+\newenvironment{work}[2]{%
     \noindent{%
-        \large{\textbf{#1} \hfill \textit{#2 - #3}}%
+        \large{\textbf{#1} \hfill \textit{#2}}%
     }%
     \vspace{0.5em}
 
-}{}
+    \noindent%
+}{
+    \vspace{1em}
+}
 
 \begin{document}
 \pagenumbering{gobble}
 
 \maketitle
 
-\section*{Profile}
-\stroke
-
-My clear logical thinking and adaptable approach to problem solving has enabled
-me to achieve a First in my Masters degree from the University of Birmingham.
-I consistently manage my workload effectively and have the motivation to
-complete tasks on time. Moreover, my personable nature means I can work
-successfully in a team as well as independently. Currently, my research
-interests are in graphical calculi for compositional systems and the lambda
-calculus using monoidal categories, and reasoning diagrammatically with graph
-rewriting techniques.
-
-\section*{Education}
-\stroke
-
-\begin{education}{%
-    PhD in Computer Science, University of Birmingham
-}{September 2019}{present}%
-    \educationsubheader{Diagrammatic semantics for digital circuits}{%
-        Supervisors:
-        \href{https://www.cs.bham.ac.uk/~drg/}{Dan Ghica},
-        \href{https://www.cs.bham.ac.uk/~backensm/}{Miriam Backens}%
-    }%
-    \noindent
-    Working on defining a diagrammatic semantics for digital circuits using
-    hypergraphs, based on the work of Ghica and Jung. The ultimate aim is to
-    define an automatic rewriting system that can be used as an sound, complete,
-    and importantly \textit{efficient}, operational semantics for digital
-    circuits.
-\end{education}
-
-\vspace{0.4em}
-
-\begin{education}{%
-    MSci in Computer Science, University of Birmingham
-}{September 2015}{July 2019}
-    \educationsubheader{%
-        Honours, Class I%
-    }{%
-        Supervisor: \href{https://noamz.org}{Noam Zeilberger}%
-    }%
-    \noindent
-    \renewcommand{\arraystretch}{1.55}
-    \begin{tabular}{rp{11.5cm}}
-        \textbf{Dissertation (74\%)}
-        &
-        Created a set of tools to help investigation of terms from various
-        fragments of the $\lambda$-calculus: a visualiser to display
-        $\lambda$-terms as 3-valent maps, and a generator to display all the
-        maps that satisfied certain criteria, such as number of crossings. URL:
-        \textit{
-            \href{https://georgejkaye.com/lambda-visualiser}{georgejkaye.com/lambda-visualiser}}
-        \\
-        \textbf{Compilers \& Languages (80\%)}
-        &
-        Covered the structure of a typical compiler, parsing, stack frames,
-        typechecking and functional languages.
-        \\
-        \textbf{Functional Programming (84\%)}
-        &
-        Introduced \textsc{Haskell} and \textsc{OCaml} and concepts such as
-        recursion, polymorphism and higher order functions.
-        \\
-        \textbf{Teaching CS in Schools (85\%)}
-        &
-        Eight days spent at local primary school
-        {\href{https://www.oasisacademyhobmoor.org/}{Oasis Academy Hobmoor}},
-        preparing and giving lessons to pupils in Years 3 and 5. The lessons
-        introduced the pupils to \textsc{Scratch} and helped them to create
-        their own games.
-        \\
-        \textbf{Reasoning (90\%)}
-        &
-        Introduction to automated theorem proving in proposition and predicate
-        logic. As an assignment, implemented a tool to perform resolution proofs
-        or DPLL model generation in \textsc{Java}.
-        URL:
-        \textit{\href{https://georgejkaye.com/theorem-prover}{georgejkaye.com/theorem-prover}}
-        \\
-        \textbf{Team Project (80\%)}
-        &
-        Worked in a team of six to develop a multiplayer game in \textsc{Java}.
-        Designed and implemented the graphics and map creation engine, and
-        integrated the components developed by the team together in the final
-        stages of the project.
-        URL: \textit{\href{https://georgejkaye.com/team-project}{georgejkaye.com/team-project}}                                           \\
-        \textbf{Other modules}
-        &
-        Mathematical Techniques for Computer Science (78\%),
-        Principles of Programming Languages (76\%),
-        Models of Computation (78\%), Software Workshop (Java) (89\%),
-        C/C++ (77\%), Machine Learning (83\%)
-    \end{tabular}
-\end{education}
-
-\vspace{0.75em}
-
-\begin{education}{Malmesbury School}{September 2008}{May 2015}{}{}
-    \vspace{0.25em}
-    \noindent\textbf{A-levels:}
-    Mathematics A*, Further Mathematics A*, Physics A, Religious Studies (AS) A,
-    Music (AS) B
-
-    \noindent\textbf{GCSEs:}
-    7A*s, 4As (including English and Maths)
-\end{education}
-
-\vspace{1em}
-
-\newpage
-
-\section*{Work Experience}
-\stroke
-
-\begin{work}{%
-    Teaching Assistant, University of Birmingham
-}{September 2019}{March 2019}
-    \noindent
-    Assisted in running the first year
-    \textit{Mathematical Foundations for Computer Science} and final year
-    \textit{Compilers \& Languages} \mbox{modules}.
-    Duties involved organising and running regular group tutorials for 10-20
-    students, marking assignments and providing feedback.
-\end{work}
-
-\vspace{1em}
-
-\begin{work}{%
-    Supermarket Assistant, Waitrose Malmesbury}{July 2014}{September 2019}
-    \noindent Part-time work in the Replenishment team working with colleagues
-    to efficiently manage and replenish stock. Role included helping customers
-    find appropriate products, taking in and signing for deliveries, keeping the
-    warehouse organised to facilitate stock management, cashier duties as and
-    when required.
-\end{work}
-
-\section*{Technical proficiencies}
-\stroke
-
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{rp{14.4cm}}
-    \tech{Java}{High}{
-        used extenively throughout my university course.
-        Java was the primary language used for many large team projects and
-        individual assignments. I have also used \lang{JUnit} for unit testing
-        on larger projects.
-    }
-    \\
-    \tech{JavaScript}{Intermediate}{
-        Used to implement my dissertation using graph theory library
-        \textsc{Cytoscape}, and for a circuit visualisation tool early in my
-        PhD.
-        Currently learning frameworks such as \lang{React}, \lang{Reason} and
-        \lang{TypeScript} for both academic and personal projects.}
-    \\
-    \tech{OCaml/Haskell}{Intermediate}{
-        Studied throughout my undergraduate degree and practised in various
-        assignments throughout the modules.
-    }
-    \\
-    \tech{Python}{High}{
-        Used during university, and for small personal projects interacting with
-        web APIs and Discord bots.
-    }
-    \\
-    \tech{C/C++}{Intermediate}{
-        Studied during university. Assignments completed include codng a basic
-        HTTP server, implementing a Lisp-style expression tree parser and
-        writing basic device drivers to interact with the kernel.
-        I also use \lang{Valgrind} to ensure correct memory management in
-        programs.
-    } \\
-    \tech{Git}{High}{Used for most personal and university projects.}
-    \\
-    \tech{VS Code}{High}{
-        Preferred text editor, used for editing, debugging and building
-        projects.
-    }
-    \\
-    \tech{\LaTeX}{High}{Used regularly for writing notes and documents.}
-\end{tabular}
-
-\section*{Volunteering}
-\stroke
-
-\begin{work}{University society committees}{2016}{2019}
-    \noindent
-    Acted as Secretary of Middle-earth Society, organising large events such as
-    inter-society quizzes and coordinating room bookings.
-    Was also Vice-President of Doctor Who Society (2016-17), during which I
-    organised a trip to the Doctor Who Experience in Cardiff and other socials
-    to laser quest and bowling.
-\end{work}
-
-\vspace{1em}
-
-\begin{work}{Maths breakfast club, Malmesbury School}{2013}{2015}
-    \noindent
-    Tutored Year 11 students preparing for their Maths GCSEs, providing support
-    where needed and guiding them through solutions to questions they found
-    challenging.
-\end{work}
-
-\vspace{-0.15em}
-
-\section*{Interests}
-\stroke
-
-\begin{itemize}[noitemsep]
-    \item Developing visualisers and tools for interesting systems and networks
-    \item Playing piano: achieved a Merit at Grade 8 in July 2015
-    \item Train journeys and long walks (especially along canals)
-\end{itemize}
+\input{profile}
+\input{work}
+\input{education}
+\input{volunteering}
+\input{tech}
+\input{interests}
 
 \end{document}
