@@ -1,2 +1,9 @@
 # latex
 *.synctex.gz
+*aux
+*fdb_latexmk
+*fls
+*out
+*log
+*pdf
+*synctex.gz
