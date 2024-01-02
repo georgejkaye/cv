@@ -1,0 +1,89 @@
+\begin{tikzpicture}[remember picture,overlay]
+    \fill[sidebar] (current page.north west)
+      rectangle ++(\sidewidth+2\margin,-\paperheight);
+\end{tikzpicture}
+
+\vspace*{\fill}
+\hspace{-2em}
+\begin{minipage}{\sidewidth}
+\begin{center}
+\color{White}{\Huge \textbf{George \\[0.25em] Kaye}}
+
+\vspace{2em}
+
+\ruleline{About}
+
+\vspace{1em}
+
+My clear logical thinking and adaptable approach to problem solving has enabled
+me to achieve a First in my Masters degree from the University of Birmingham.
+I consistently manage my workload effectively and have the motivation to
+complete tasks on time. Moreover, my personable nature means I can work
+successfully in a team as well as independently.
+
+\todo[inline]{Update this please!}
+
+\vspace{2em}
+
+\ruleline{Contact}
+
+\vspace{1em}
+
+\begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+  \matrix [
+    column 1/.style={anchor=center,contactIcon},
+    column 2/.style={anchor=west,align=left,contactText},
+    column sep=5pt,
+    row sep=5pt] (contact) {
+    \node{\faEnvelope};
+      & \node{\href{mailto:georgejkaye@gmail.com}{georgejkaye@gmail.com}};\\
+    \node{\faPhone};
+      & \node[contactText]{+44 7544 646100};\\
+    \node{\faGlobe};
+      & \node{\href{https://georgejkaye.com}{georgejkaye.com}};\\
+    \node{\faGithub};
+      & \node{\href{https://github.com/johndoe}{georgejkaye}};\\
+};
+\end{tikzpicture}
+
+\vspace{2em}
+
+\ruleline{Skills}
+
+\vspace{1em}
+
+\newtcbox{\techbox}{%
+    left=1pt,%
+    right=1pt,%
+    top=2pt,%
+    bottom=2pt,%
+    height=20pt,%
+    nobeforeafter,%
+    valign=center,%
+    colback=sidebar,%
+    colframe=sidebar,
+    box align=center,%
+    fontupper=\color{white}%
+}
+\newcommand{\tech}[1]{\techbox{\strut#1}}
+
+\noindent
+\tech{JavaScript}
+\tech{TypeScript}
+\tech{React/NextJS}
+\tech{Python}
+\tech{Docker}
+\tech{OCaml}
+\tech{Haskell}
+\tech{C/C++}
+\tech{Rust}
+\tech{Java}
+\tech{Linux}
+\tech{Git}
+\tech{VS Code}
+\tech{LaTeX}
+
+
+\end{center}
+\end{minipage}
+\vspace*{\fill}

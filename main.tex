@@ -1,32 +1,38 @@
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 
-\usepackage{palatino}
 \usepackage{array}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{enumitem}
 \usepackage{todonotes}
-\usepackage[margin=0.7in]{geometry}
-\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage{tcolorbox}
+
+\usepackage[sfdefault]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+
+\usepackage{fontawesome5}
+
+
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,backgrounds,matrix}
 
 \newcommand{\stroke}{\hrule\vspace{1em}}
-\newcommand{\tech}[3]{\lang{#1} & \textit{#2 proficiency:} #3}
-\newcommand{\lang}[1]{\textbf{\textsc{#1}}}
 
-\title{\vspace{-0.75in}\Huge\textbf{GEORGE KAYE}}
-\author{
-    (+44) 7544 646 100
-    \hspace{0.3em}\(\bullet\)\hspace{0.3em}
-    \href{mailto:georgejkaye@gmail.com}{georgejkaye@gmail.com}
-    \hspace{0.3em}\(\bullet\)\hspace{0.3em}
-    \href{https://georgejkaye.com}{georgejkaye.com}
-    \hspace{0.3em}\(\bullet\)\hspace{0.3em}
-    \textbf{GitHub:} \href{http://github.com/georgejkaye}{georgejkaye}}
-\date{}
+\usepackage{calc}
 
-\definecolor{lightgray}{gray}{0.8}
-\newcolumntype{L}{>{\raggedleft}p{0.2\textwidth}}
-\newcolumntype{R}{p{0.8\textwidth}}
-\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+% define length
+\newlength\margin
+\setlength\margin{1cm}
+
+% set a4paper width minimal options
+\usepackage[margin=\margin,noheadfoot,a4paper]{geometry}
+
+% define more lengths
+\newlength\sidewidth
+\setlength\sidewidth{0.3\paperwidth-\margin}
+
+\newlength\mainwidth
+\setlength\mainwidth{\paperwidth-4\margin-\sidewidth}
 
 \newenvironment{education}[2]{%
     \noindent{\large{\textbf{#1} \hfill #2}}%
@@ -58,16 +64,42 @@
     \vspace{1em}
 }
 
+\definecolor{sidebar}{HTML}{383a59}
+\definecolor{accent}{HTML}{ff79c6}
+\definecolor{link}{HTML}{8be9fd}
+
+\tikzset{
+  contactIcon/.style={%
+    minimum height=\baselineskip,
+  },
+  contactText/.style={%
+    minimum height=\baselineskip,
+    text depth=0pt,
+  }
+}
+
+\makeatletter
+\def\cv@hrulefill{{\color{accent}\leavevmode\leaders\hrule height 1pt\hfill\kern\z@}}
+
+% line before and after text
+\NewDocumentCommand{\ruleline}{m}{\par\noindent\raisebox{\baselineskip/4}{\makebox[\linewidth]{\cv@hrulefill\hspace{1ex}\raisebox{-\baselineskip/4}{#1}\hspace{1ex}\cv@hrulefill}}}
+\makeatother
+
+\usepackage[colorlinks=true,urlcolor=link]{hyperref}
+
 \begin{document}
 \pagenumbering{gobble}
 
-\maketitle
+% \maketitle
 
-\input{profile}
-\input{work}
-\input{education}
-\input{volunteering}
-\input{tech}
-\input{interests}
+\input{sidebar}
+
+% \input{profile}
+% \input{work}
+% \input{education}
+% \input{volunteering}
+% \newpage
+% \input{tech}
+% \input{interests}
 
 \end{document}
