@@ -1,0 +1,77 @@
+
+\newcounter{educations}
+\newcommand{\test}{1}
+\newcommand{\preveducation}{}
+\newcommand{\education}[4]{
+    \stepcounter{educations}
+    \pgfmathtruncatemacro{\itemno}{\value{educations}}
+    \node[
+        below=\sectionsep of #4.south west,
+        eventdottext]
+        (item \itemno header)
+        {\phantom{Evening}};
+    \node[
+        below=\sectionsep of #4.south west,
+        eventdottext
+    ](item \itemno){\cveducation{#1}{#2}{#3}};
+    \node[
+    left=\timedotsep of item \itemno header,
+    timedot]
+    (start)
+    {};
+}
+
+\begin{tikzpicture}[
+    every node/.style={
+      inner sep=0pt,
+      outer sep=0pt
+    },
+    remember picture,
+    overlay,
+    shift={($(current page.north west)%
+             +(\sidewidth+2.75\margin+\timedotsep,-\margin)$)}]
+
+    \node[sectionTitle] at (0,0) (title 1) {\cvsection{Education}};
+    \node[left=\timedotsep of title 1,headerIcon] {\faGraduationCap};
+    \begin{scope}[on background layer]
+        \draw[line width=2pt,sidebar]
+        let \p1=(title 1.south west),
+            \p2=(current page.east) in
+        (\x1,\y1-\sectionheaderbelow) to (\x2,\y1-\sectionheaderbelow);
+    \end{scope}
+    \education{%
+        PhD in Computer Science, University of Birmingham%
+    }{%
+        September 2019 - present
+    }{%
+        Working on defining a diagrammatic semantics for digital circuits using
+        hypergraphs, based on the work of Ghica and Jung. The ultimate aim is to
+        define an automatic rewriting system that can be used as an sound, complete,
+        and importantly \textit{efficient}, operational semantics for digital
+        circuits.
+        \todo[inline]{Spruce up}
+    }{%
+        title 1%
+    }
+    \education{%
+        MSci in Computer Science, University of Birmingham%
+    }{%
+        September 2015 - July 2019
+    }{%
+        \textbf{Relevant modules:}
+            Compilers \& Languages, Functional Programming, Software Workshop,
+            C/C++, Operating Systems
+    }{%
+        item 1%
+    }
+    \education{Malmesbury School}{September 2008 - May 2015}{%
+        \textbf{A-levels:}
+        Maths A*, Further Maths A*, Physics A, Religious Studies (AS) A,
+        Music (AS) B
+        \,
+        \textbf{GCSEs:}
+        7A*s, 4As (inc. English and Maths)
+    }{%
+        item 2%
+    }
+\end{tikzpicture}
