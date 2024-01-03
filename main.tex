@@ -1,82 +1,34 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 
+\usepackage{ifthen}
 \usepackage{array}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{enumitem}
 \usepackage{todonotes}
 \usepackage{tcolorbox}
 
-\usepackage[sfdefault]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font
+\usepackage[sfdefault]{FiraSans}
 \usepackage[T1]{fontenc}
 \renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
-
 \usepackage{fontawesome5}
-
-
+\usepackage{calc}
 \usepackage{tikz}
 \usetikzlibrary{calc,positioning,backgrounds,matrix}
 
 \newcommand{\stroke}{\hrule\vspace{1em}}
 
-\usepackage{calc}
-
 % define length
-\newlength\margin
-\setlength\margin{1cm}
 
 % set a4paper width minimal options
+
+\input{lengths}
+\input{colours}
+\input{styles}
+
 \usepackage[margin=\margin,noheadfoot,a4paper]{geometry}
 
-% define more lengths
-\newlength\sidewidth
-\setlength\sidewidth{0.3\paperwidth-\margin}
-
-\newlength\mainwidth
-\setlength\mainwidth{\paperwidth-4\margin-\sidewidth}
-
-\newenvironment{education}[2]{%
-    \noindent{\large{\textbf{#1} \hfill #2}}%
-    \vspace{0.5em}
-
-    \noindent%
-}{%
-    \vspace{0.5em}
-}
-\newcommand{\educationsubheader}[2]{%
-    \noindent{%
-        \large\textit{#1}
-        \hfill
-        #2
-    }%
-
-    \vspace{0.25em}
-
-    \noindent%
-}%
-\newenvironment{work}[2]{%
-    \noindent{%
-        \large{\textbf{#1} \hfill \textit{#2}}%
-    }%
-    \vspace{0.5em}
-
-    \noindent%
-}{
-    \vspace{1em}
-}
-
-\definecolor{sidebar}{HTML}{383a59}
-\definecolor{accent}{HTML}{ff79c6}
-\definecolor{link}{HTML}{8be9fd}
-
-\tikzset{
-  contactIcon/.style={%
-    minimum height=\baselineskip,
-  },
-  contactText/.style={%
-    minimum height=\baselineskip,
-    text depth=0pt,
-  }
-}
+\newcommand{\cvsection}[1]{\Large\textbf{#1}}
+\newcommand{\cveducation}[3]{{\textbf{#1}}\\#2\\\emph{#3}}
 
 \makeatletter
 \def\cv@hrulefill{{\color{accent}\leavevmode\leaders\hrule height 1pt\hfill\kern\z@}}

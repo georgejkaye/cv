@@ -1,0 +1,33 @@
+\tikzset{
+    contactIcon/.style={%
+        minimum height=\baselineskip,
+    },
+    contactText/.style={%
+        minimum height=\baselineskip,
+        text depth=0pt,
+    },
+    headerIcon/.style={
+        minimum width=\headericonwidth,
+        anchor=center,
+    },
+    sectionTitle/.style={
+        anchor=north west,
+        align=left
+    },
+    eventdottext/.style = {
+        text width=\mainwidth-\timedotsep,
+        black,
+        anchor=north west,
+    },
+    invisibletimedot/.style = {
+        circle,
+        minimum width=3pt,
+        anchor=center
+    },
+    timedot/.style = {
+        invisibletimedot,
+        draw,
+        fill,
+        black,
+},
+}
