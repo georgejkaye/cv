@@ -1,24 +1,50 @@
-
 \newcounter{educations}
-\newcommand{\test}{1}
-\newcommand{\preveducation}{}
-\newcommand{\education}[4]{
+\newcommand{\educationtext}[3]{{\textbf{#1}}\\[0.15em]\textit{#2}\\[0.1em]\small{#3}}
+\newcommand{\education}[4]{%
     \stepcounter{educations}
     \pgfmathtruncatemacro{\itemno}{\value{educations}}
     \node[
         below=\sectionsep of #4.south west,
         eventdottext]
         (item \itemno header)
-        {\phantom{Evening}};
+        {\phantom{#1}};
     \node[
         below=\sectionsep of #4.south west,
         eventdottext
-    ](item \itemno){\cveducation{#1}{#2}{#3}};
+    ](item \itemno){\educationtext{#1}{#2}{#3}};
     \node[
-    left=\timedotsep of item \itemno header,
-    timedot]
-    (start)
+        left=\timedotsep of item \itemno header,
+        timedot
+    ](time \itemno)
     {};
+}
+\newcounter{experiences}
+\newcommand{\experiencetext}[4]{{\textbf{#1, #2}}\\[0.15em]\textit{#3}\\[0.1em]{\small#4}}
+\newcommand{\experience}[5]{%
+    \stepcounter{educations}
+    \pgfmathtruncatemacro{\itemno}{\value{educations}}
+    \node[
+        below=\sectionsep of #5.south west,
+        eventdottext]
+        (item \itemno header)
+        {\phantom{#1}};
+    \node[
+        below=\sectionsep of #5.south west,
+        eventdottext
+    ](item \itemno){\experiencetext{#1}{#2}{#3}{#4}};
+    \node[
+        left=\timedotsep of item \itemno header,
+        timedot
+    ](time \itemno)
+    {};
+}
+\newcommand{\sectionstroke}[1]{%
+    \begin{scope}[on background layer]
+        \draw[line width=1.5pt,sidebar]
+        let \p1=(#1.south west),
+            \p2=(current page.east) in
+        (\x1,\y1-\sectionheaderbelow) to (\x2,\y1-\sectionheaderbelow);
+    \end{scope}
 }
 
 \begin{tikzpicture}[
@@ -29,27 +55,21 @@
     remember picture,
     overlay,
     shift={($(current page.north west)%
-             +(\sidewidth+2.75\margin+\timedotsep,-\margin)$)}]
-
+             +(\sidewidth+2.75\margin+\timedotsep,-0.5\margin)$)}]
+    \hypersetup{urlcolor=linkonlight}
     \node[sectionTitle] at (0,0) (title 1) {\cvsection{Education}};
     \node[left=\timedotsep of title 1,headerIcon] {\faGraduationCap};
-    \begin{scope}[on background layer]
-        \draw[line width=2pt,sidebar]
-        let \p1=(title 1.south west),
-            \p2=(current page.east) in
-        (\x1,\y1-\sectionheaderbelow) to (\x2,\y1-\sectionheaderbelow);
-    \end{scope}
+    \sectionstroke{title 1}
     \education{%
         PhD in Computer Science, University of Birmingham%
     }{%
         September 2019 - present
     }{%
-        Working on defining a diagrammatic semantics for digital circuits using
-        hypergraphs, based on the work of Ghica and Jung. The ultimate aim is to
-        define an automatic rewriting system that can be used as an sound, complete,
-        and importantly \textit{efficient}, operational semantics for digital
-        circuits.
-        \todo[inline]{Spruce up}
+        Using category theory to define a \emph{fully compositional framework}
+        for digital circuits with delay and feedback, leading to a
+        \emph{operational semantics} and \emph{equational theory} for circuits,
+        as well as allowing for automatic reasoning about them with
+        \emph{graph rewriting}.
     }{%
         title 1%
     }
@@ -58,9 +78,9 @@
     }{%
         September 2015 - July 2019
     }{%
-        \textbf{Relevant modules:}
+        Studied modules including
             Compilers \& Languages, Functional Programming, Software Workshop,
-            C/C++, Operating Systems
+            C/C++, Operating Systems, Teaching CS In Schools
     }{%
         item 1%
     }
@@ -70,8 +90,104 @@
         Music (AS) B
         \,
         \textbf{GCSEs:}
-        7A*s, 4As (inc. English and Maths)
+        7A*s, 4As (including English and Maths)
     }{%
         item 2%
     }
+    \node[
+        left=\timedotsep of item 3.south west,
+        invisibletimedot
+    ](time 4)
+    {};
+    \draw (time 1.center) to (time 4.center);
+
+    \node[below=0.6cm of item 3.south west,sectionTitle] (title 2) {\cvsection{Experience}};
+    \node[left=\timedotsep of title 2,headerIcon] {\faBriefcase};
+    \node[below=0.6cm of item 3.south west,sectionTitle] (title 2 dummy) {\phantom{\cvsection{Education}}};
+    \sectionstroke{title 2}
+    \experience{Teaching Assistant}{University of Birmingham}{%
+        September 2019 - present
+    }{%
+        Helping to run the
+        \textit{Logical and Mathematical Foundations for Computer Science},
+        \textit{Theories of Computation}, and
+        \textit{Compilers \& Languages} modules.
+        Have led regular group tutorials for 10-20 students and distributed
+        the marking of assignments between the teaching assistants.
+        Received awards in 2022 for going above and beyond my duties.
+    }{title 2}
+    \experience{Research Assistant}{University of Birmingham}{%
+        September 2019 - present
+    }{%
+        Integrating the School of Computer Science's research student progress
+        system into the existing \textsc{OCaml} system used for monitoring
+        undergraduate progress.
+    }{item 4}
+    \experience{Research Intern}{Huawei R\&D, Edinburgh}{%
+        September 2019 - present
+    }{%
+        Worked as part of the Programming Languages Lab in designing a hardware
+        description language in Huawei's new programming language.
+        Also added new compiler optimisations for the new programming
+        language using the large \textsc{C++} codebase.
+    }{item 5}
+    \experience{Supermarket Assistant}{Waitrose Malmesbury}{%
+        July 2014 - September 2019
+    }{}{item 6}
+    \node[
+        left=\timedotsep of item 7.south west,
+        invisibletimedot
+    ](time 8)
+    {};
+    \draw (time 4.center) -- (time 8.center);
+
+    \node[below=0.6cm of item 7.south west,sectionTitle] (title 3) {\cvsection{Volunteering}};
+    \node[left=\timedotsep of title 3,headerIcon] {\faRocket};
+    \node[below=0.6cm of item 3.south west,sectionTitle] (title 3 dummy) {\phantom{\cvsection{Volunteering}}};
+    \sectionstroke{title 3}
+    \education{Local Organiser, Twelfth Symposium on Compositional Structures}{%
+        15-16 April 2024
+    }{
+        Raised funding to host the next edition of this conference at
+        Birmingham.
+        Will maintain the conference webpage, organise social events, book and
+        set up rooms, arrange catering, and work with the committee to assemble
+        the selection of talks.
+
+        URL: \url{https://www.cl.cam.ac.uk/events/syco/12/}
+    }{title 3}
+    \education{Theory Seminar Organiser, University of Birmingham}{%
+        March 2022 - present
+    }{
+        Being proactive in inviting speakers for the weekly research seminar,
+        communicating with speakers and their hosts to ensure transparency
+        throughout the process, and setting up and maintaining the room during
+        talks.
+
+    }{item 8}
+    \education{Local Helper, Midlands Graduate School 2023}{%
+        02-06 April 2023
+    }{%
+        Guided students around campus and to and from various social events,
+        and provided technical assistance throughout the week.
+
+        URL: \url{https://www.cs.bham.ac.uk/~mhe/events/MGS23/}
+    }{item 9}
+    \education{%
+        Further Years Rep, Staff/Research Student Consultative Committee
+    }{%
+        September 2022 - present
+    }{%
+        Championing research students' issues.
+        Successes include the preservation of permanent desks for students,
+        restoring student profiles to the university website,
+        helping reform the progress monitoring system, and improving the
+        School's cleaning policies.
+    }{item 10}
+    \node[
+        left=\timedotsep of item 11.south west,
+        invisibletimedot
+    ](time 11){};
+    \draw (time 8.center) -- (time 11.center);
+
 \end{tikzpicture}
