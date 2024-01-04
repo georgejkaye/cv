@@ -28,7 +28,6 @@
 \usepackage[margin=\margin,noheadfoot,a4paper]{geometry}
 
 \newcommand{\cvsection}[1]{\Large\textbf{#1}}
-\newcommand{\cveducation}[3]{{\textbf{#1}}\\#2\\\emph{#3}}
 
 \makeatletter
 \def\cv@hrulefill{{\color{accent}\leavevmode\leaders\hrule height 1pt\hfill\kern\z@}}
@@ -37,7 +36,7 @@
 \NewDocumentCommand{\ruleline}{m}{\par\noindent\raisebox{\baselineskip/4}{\makebox[\linewidth]{\cv@hrulefill\hspace{1ex}\raisebox{-\baselineskip/4}{#1}\hspace{1ex}\cv@hrulefill}}}
 \makeatother
 
-\usepackage[colorlinks=true,urlcolor=link]{hyperref}
+\usepackage[colorlinks=true]{hyperref}
 
 \begin{document}
 \pagenumbering{gobble}
