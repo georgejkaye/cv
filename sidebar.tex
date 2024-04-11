@@ -1,121 +1,122 @@
 \begin{tikzpicture}[remember picture,overlay]
-    \fill[sidebar] (current page.north west)
-      rectangle ++(\sidewidth+2\margin,-\paperheight);
+  \fill[sidebar] (current page.north west)
+  rectangle ++(\sidewidth+2\margin,-\paperheight);
 \end{tikzpicture}
 
 \vspace*{\fill}
 \hspace{-2.5em}
 \begin{minipage}{\sidewidth+0.5\margin}
-\begin{center}
-\color{White}{\Huge \textbf{George \\[0.25em] Kaye}}
+  \begin{center}
+    \color{White}{\Huge \textbf{George \\[0.25em] Kaye}}
 
-\vspace{2em}
+    \vspace{2em}
 
-\ruleline{About}
+    \ruleline{About}
 
-\vspace{1em}
+    \vspace{1em}
 
-My clear logical thinking and adaptable approach to problem solving has
-underpinned my ability to study for a PhD in Computer Science from the
-University of Birmingham, which I am close to completing.
-I have the motivation to complete tasks on time and consistently manage my
-workload effectively.
-Additionally, my personable nature means I can work
-successfully in a team as well as independently.
-During my studies I have confidently delivered research talks and fielded
-questions across audiences from a variety of backgrounds.
-I also worked as an intern at Huawei's Programming Languages Lab, which has led
-me to pursue other digital roles in industry.
+    My clear logical thinking and adaptable approach to problem solving has
+    underpinned my ability to study for a PhD in Computer Science from the
+    University of Birmingham, which I am close to completing.
+    I have the motivation to complete tasks on time and consistently manage my
+    workload effectively.
+    Additionally, my personable nature means I can work
+    successfully in a team as well as independently.
+    During my studies I have confidently delivered research talks and fielded
+    questions across audiences from a variety of backgrounds.
+    I also worked as an intern at Huawei's Programming Languages Lab, which has led
+    me to pursue other digital roles in industry.
 
-\vspace{2em}
+    \vspace{2em}
 
-\ruleline{Contact}
+    \ruleline{Contact}
 
-\vspace{1em}
+    \vspace{1em}
 
-\begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
-  \hypersetup{urlcolor=linkondark}
-  \matrix [
-    column 1/.style={anchor=center,contactIcon},
-    column 2/.style={anchor=west,align=left,contactText},
-    column sep=5pt,
-    row sep=5pt] (contact) {
-    \node{\faEnvelope};
-      & \node{\href{mailto:georgejkaye@gmail.com}{georgejkaye@gmail.com}};\\
-    \node{\faPhone};
-      & \node[contactText]{+44 7544 646100};\\
-    \node{\faGlobe};
-      & \node{\href{https://georgejkaye.com}{georgejkaye.com}};\\
-    \node{\faGithub};
-      & \node{\href{https://github.com/georgejkaye}{georgejkaye}};\\
-};
-\end{tikzpicture}
+    \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+      \hypersetup{urlcolor=linkondark}
+      \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactText},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        \node{\faEnvelope};
+         & \node{\href{mailto:georgejkaye@gmail.com}{georgejkaye@gmail.com}};        \\
+        \node{\faPhone};
+         & \node[contactText]{+44 7544 646100}; \\
+        \node{\faGlobe};
+         & \node{\href{https://georgejkaye.com}{georgejkaye.com}};        \\
+        \node{\faGithub};
+         & \node{\href{https://github.com/georgejkaye}{georgejkaye}};       \\
+      };
+    \end{tikzpicture}
 
-\vspace{2em}
+    \vspace{2em}
 
-\ruleline{Technical skills}
+    \ruleline{Technical skills}
 
-\vspace{1em}
+    \vspace{1em}
 
-\newtcbox{\techbox}{%
-    left=1pt,%
-    right=1pt,%
-    top=2pt,%
-    bottom=2pt,%
-    height=20pt,%
-    nobeforeafter,%
-    valign=center,%
-    colback=sidebar,%
-    colframe=sidebar,
-    box align=center,%
-    fontupper=\color{white}%
-}
-\newcommand{\tech}[1]{\techbox{\strut#1}}
+    \newtcbox{\techbox}{%
+      left=1pt,%
+      right=1pt,%
+      top=2pt,%
+      bottom=2pt,%
+      height=20pt,%
+      nobeforeafter,%
+      valign=center,%
+      colback=sidebar,%
+      colframe=sidebar,
+      box align=center,%
+      fontupper=\color{white}%
+    }
+    \newcommand{\tech}[1]{\techbox{\strut#1}}
 
-\noindent
-\tech{JavaScript}
-\tech{TypeScript}
-\tech{SQL}
-\tech{React/Next.js}
-\tech{HTML/CSS}
-\tech{Python}
-\tech{Docker}
-\tech{OCaml}
-\tech{Haskell}
-\tech{Scala}
-\tech{C/C++}
-\tech{Rust}
-\tech{Java}
-\tech{Linux}
-\tech{Git}
-\tech{VS Code}
-\tech{LaTeX}
+    \noindent
+    \tech{JavaScript}
+    \tech{TypeScript}
+    \tech{SQL}
+    \tech{React/Next.js}
+    \tech{HTML/CSS}
+    \tech{Python}
+    \tech{Docker}
+    \tech{OCaml}
+    \tech{F\#}
+    \tech{Haskell}
+    \tech{Scala}
+    \tech{C/C++}
+    \tech{Rust}
+    \tech{Java}
+    \tech{Linux}
+    \tech{Git}
+    \tech{VS Code}
+    \tech{LaTeX}
 
-\vspace{2em}
+    \vspace{2em}
 
-\ruleline{Interests}
+    \ruleline{Interests}
 
-\vspace{1em}
+    \vspace{1em}
 
-\newtcbox{\interestbox}{%
-    left=1pt,%
-    right=1pt,%
-    top=2pt,%
-    bottom=2pt,%
-    height=20pt,%
-    nobeforeafter,%
-    valign=center,%
-    colback=sidebar,%
-    colframe=sidebar,
-    box align=center,%
-    fontupper=\color{white}%
-}
-\newcommand{\interest}[1]{\interestbox{\strut#1}}
+    \newtcbox{\interestbox}{%
+      left=1pt,%
+      right=1pt,%
+      top=2pt,%
+      bottom=2pt,%
+      height=20pt,%
+      nobeforeafter,%
+      valign=center,%
+      colback=sidebar,%
+      colframe=sidebar,
+      box align=center,%
+      fontupper=\color{white}%
+    }
+    \newcommand{\interest}[1]{\interestbox{\strut#1}}
 
-\interest{Hiking}
-\interest{Canals and railways}
-\interest{Playing the piano}
+    \interest{Hiking}
+    \interest{Canals and railways}
+    \interest{Playing the piano}
 
-\end{center}
+  \end{center}
 \end{minipage}
 \vspace*{\fill}
