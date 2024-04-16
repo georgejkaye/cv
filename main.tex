@@ -1,5 +1,4 @@
-\documentclass[10pt]{article}
-
+% !TeX root = main-research.tex
 \usepackage{ifthen}
 \usepackage{array}
 \usepackage[none]{hyphenat}
@@ -45,6 +44,10 @@
 % \maketitle
 
 \input{sidebar}
-\input{content}
+\iftoggle{research}{%
+    \input{content-research}%
+}{%
+    \input{content-programming}%
+}%
 
 \end{document}

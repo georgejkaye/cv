@@ -6,8 +6,8 @@
     \node[
         below=\sectionsep of #4.south west,
         eventdottext]
-        (item \itemno header)
-        {\phantom{#1}};
+    (item \itemno header)
+    {\phantom{#1}};
     \node[
         below=\sectionsep of #4.south west,
         eventdottext
@@ -26,8 +26,8 @@
     \node[
         below=\sectionsep of #5.south west,
         eventdottext]
-        (item \itemno header)
-        {\phantom{#1}};
+    (item \itemno header)
+    {\phantom{#1}};
     \node[
         below=\sectionsep of #5.south west,
         eventdottext
@@ -42,20 +42,20 @@
     \begin{scope}[on background layer]
         \draw[line width=1.5pt,sidebar]
         let \p1=(#1.south west),
-            \p2=(current page.east) in
+        \p2=(current page.east) in
         (\x1,\y1-\sectionheaderbelow) to (\x2,\y1-\sectionheaderbelow);
     \end{scope}
 }
 
 \begin{tikzpicture}[
-    every node/.style={
-      inner sep=0pt,
-      outer sep=0pt
-    },
-    remember picture,
-    overlay,
-    shift={($(current page.north west)%
-             +(\sidewidth+2.75\margin+\timedotsep,-0.5\margin)$)}]
+        every node/.style={
+                inner sep=0pt,
+                outer sep=0pt
+            },
+        remember picture,
+        overlay,
+        shift={($(current page.north west)%
+                    +(\sidewidth+2.75\margin+\timedotsep,-0.5\margin)$)}]
     \hypersetup{urlcolor=linkonlight}
     \node[sectionTitle] at (0,0) (title 1) {\cvsection{Education}};
     \node[left=\timedotsep of title 1,headerIcon] {\faGraduationCap};
@@ -79,8 +79,8 @@
         September 2015 - July 2019
     }{%
         Studied modules including
-            Compilers \& Languages, Functional Programming, Software Workshop,
-            C/C++, Operating Systems, Teaching CS In Schools
+        Compilers \& Languages, Functional Programming, Software Workshop,
+        C/C++, Operating Systems, Teaching CS In Schools
     }{%
         item 1%
     }
@@ -150,9 +150,10 @@
     }{
         Raised funding to host the next edition of this conference at
         Birmingham.
-        Will maintain the conference webpage, organise social events, book and
-        set up rooms, arrange catering, and work with the committee to assemble
-        the selection of talks.
+        Responsibilities included maintaining the conference webpage,
+        organising social events, booking and setting up rooms, arranging
+        catering, and working with the committee to assemble the selection of
+        talks.
 
         URL: \url{https://www.cl.cam.ac.uk/events/syco/12/}
     }{title 3}

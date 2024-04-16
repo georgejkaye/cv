@@ -1,0 +1,212 @@
+\newcounter{educations}
+\newcommand{\educationtext}[3]{{\textbf{#1}}\\[0.15em]\textit{#2}\\[0.1em]\small{#3}}
+\newcommand{\education}[4]{%
+    \stepcounter{educations}
+    \pgfmathtruncatemacro{\itemno}{\value{educations}}
+    \node[
+        below=\sectionsep of #4.south west,
+        eventdottext]
+    (item \itemno header)
+    {\phantom{#1}};
+    \node[
+        below=\sectionsep of #4.south west,
+        eventdottext
+    ](item \itemno){\educationtext{#1}{#2}{#3}};
+    \node[
+        left=\timedotsep of item \itemno header,
+        timedot
+    ](time \itemno)
+    {};
+}
+\newcounter{experiences}
+\newcommand{\experiencetext}[4]{{\textbf{#1, #2}}\\[0.15em]\textit{#3}\\[0.1em]{\small#4}}
+\newcommand{\experience}[5]{%
+    \stepcounter{educations}
+    \pgfmathtruncatemacro{\itemno}{\value{educations}}
+    \node[
+        below=\sectionsep of #5.south west,
+        eventdottext]
+    (item \itemno header)
+    {\phantom{#1}};
+    \node[
+        below=\sectionsep of #5.south west,
+        eventdottext
+    ](item \itemno){\experiencetext{#1}{#2}{#3}{#4}};
+    \node[
+        left=\timedotsep of item \itemno header,
+        timedot
+    ](time \itemno)
+    {};
+}
+\newcommand{\papertext}[4]{{\textbf{#1}}\\[0.15em]\textit{#2}, \url{#3}\\[0.1em]\small{#4}}
+\newcommand{\paper}[5]{%
+    \stepcounter{educations}
+    \pgfmathtruncatemacro{\itemno}{\value{educations}}
+    \node[
+        below=\sectionsep of #5.south west,
+        eventdottext]
+    (item \itemno header)
+    {\phantom{#1}};
+    \node[
+        below=\sectionsep of #5.south west,
+        eventdottext
+    ](item \itemno){\papertext{#1}{#2}{#3}{#4}};
+    \node[
+        left=\timedotsep of item \itemno header,
+        timedot
+    ](time \itemno)
+    {};
+}
+\newcommand{\sectionstroke}[1]{%
+    \begin{scope}[on background layer]
+        \draw[line width=1.5pt,sidebar]
+        let \p1=(#1.south west),
+        \p2=(current page.east) in
+        (\x1,\y1-\sectionheaderbelow) to (\x2,\y1-\sectionheaderbelow);
+    \end{scope}
+}
+\begin{tikzpicture}[
+        every node/.style={
+                inner sep=0pt,
+                outer sep=0pt
+            },
+        remember picture,
+        overlay,
+        shift={($(current page.north west)%
+                    +(\sidewidth+2.75\margin+\timedotsep,-0.5\margin)$)}]
+    \hypersetup{urlcolor=linkonlight}
+    \node[sectionTitle] at (0,0) (title 1) {\cvsection{Education}};
+    \node[left=\timedotsep of title 1,headerIcon] {\faGraduationCap};
+    \sectionstroke{title 1}
+    \education{%
+        PhD in Computer Science, University of Birmingham%
+    }{%
+        September 2019 - July 2024
+    }{%
+        Using category theory to define a \emph{fully compositional framework}
+        for digital circuits with delay and feedback, leading to a
+        \emph{operational semantics} and \emph{equational theory} for circuits,
+        as well as allowing for automatic reasoning about them with
+        \emph{graph rewriting}.
+    }{%
+        title 1%
+    }
+    \education{%
+        MSci in Computer Science, University of Birmingham (Honours, Class I)%
+    }{%
+        September 2015 - July 2019
+    }{%
+        Studied modules including
+        Compilers \& Languages, Functional Programming, Software Workshop,
+        C/C++, Operating Systems, Teaching CS In Schools
+    }{%
+        item 1%
+    }
+    \education{Malmesbury School}{September 2008 - May 2015}{%
+        \textbf{A-levels:}
+        Maths A*, Further Maths A*, Physics A, Religious Studies (AS) A,
+        Music (AS) B
+        \,
+        \textbf{GCSEs:}
+        7A*s, 4As (including English and Maths)
+    }{%
+        item 2%
+    }
+    \node[
+        left=\timedotsep of item 3.south west,
+        invisibletimedot
+    ](time 4)
+    {};
+    \draw (time 1.center) to (time 4.center);
+
+    \node[below=0.6cm of item 3.south west,sectionTitle] (title 2) {\cvsection{Experience}};
+    \node[left=\timedotsep of title 2,headerIcon] {\faBriefcase};
+    \node[below=0.6cm of item 3.south west,sectionTitle] (title 2 dummy) {\phantom{\cvsection{Education}}};
+    \sectionstroke{title 2}
+    \experience{Teaching Assistant}{University of Birmingham}{%
+        September 2019 - June 2024
+    }{%
+        Supporting the
+        \textit{Logical and Mathematical Foundations for Computer Science},
+        \textit{Theories of Computation}, and
+        \textit{Compilers \& Languages} modules.
+        Have led regular group tutorials for 10-20 students and distributed
+        the marking of assignments between the teaching assistants.
+        Received awards in 2022 for going above and beyond my duties.
+    }{title 2}
+    \experience{Research Intern}{Huawei R\&D, Edinburgh}{%
+        January 2021 - November 2023
+    }{%
+        Worked as part of the Programming Languages Lab in designing a hardware
+        description language in Huawei's new programming language.
+        Developed compiler optimisations for the new programming
+        language using the large \textsc{C++} codebase.
+    }{item 4}
+    \node[
+        left=\timedotsep of item 5.south west,
+        invisibletimedot
+    ](time 5)
+    {};
+    \draw (time 4.center) -- (time 5.center);
+
+    \node[below=0.6cm of item 5.south west,sectionTitle] (title 3) {\cvsection{Papers}};
+    \node[left=\timedotsep of title 3,headerIcon] {\faPencil*};
+    \node[below=0.6cm of item 3.south west,sectionTitle] (title 3 dummy) {\phantom{\cvsection{Volunteering}}};
+    \sectionstroke{title 3}
+
+    \paper{A Fully Compositional Theory of Sequential Digital Circuits}{Arxiv preprint}{
+        https://doi.org/10.48550/arXiv.2201.10456}{%
+        We extend previous work modelling sequential circuits with delay and
+        feedback as morphisms in a symmetric traced monoidal category by
+        providing three sound and complete semantics: a denotational semantics
+        in terms of stream functions, an operational semantics for processing
+        the inputs to a circuit automatically, and an algebraic semantics for
+        efficient reasoning.
+    }{title 3}
+
+    \paper{Rewriting Modulo Traced Comonoid Structure}{FSCD 2023}{
+        https://doi.org/10.4230/LIPIcs.FSCD.2023.14}{%
+        We adapt existing work on rewriting string diagrams using
+        hypergraphs for settings with a traced comonoid structure.
+        Examples of settings with such a structure include traced Cartesian
+        categories, which are often used to model fixpoints; and the category
+        of digital circuits.
+    }{item 6}
+    \node[
+        left=\timedotsep of item 7.south west,
+        invisibletimedot
+    ](time 7)
+    {};
+    \draw (time 6.center) -- (time 7.center);
+
+    \node[below=0.6cm of item 7.south west,sectionTitle] (title 4) {\cvsection{Volunteering}};
+    \node[left=\timedotsep of title 4,headerIcon] {\faRocket};
+    \node[below=0.6cm of item 3.south west,sectionTitle] (title 5 dummy) {\phantom{\cvsection{Volunteering}}};
+    \sectionstroke{title 4}
+    \education{Local Organiser, Twelfth Symposium on Compositional Structures}{%
+        15-16 April 2024
+    }{
+        Raised funding to host the next edition of this conference at
+        Birmingham.
+        Responsibilities included maintaining the conference webpage,
+        organising social events, booking and setting up rooms, arranging
+        catering, and working with the committee to assemble the selection of
+        talks.
+
+        URL: \url{https://www.cl.cam.ac.uk/events/syco/12/}
+    }{title 4}
+    \education{Theory Seminar Organiser, University of Birmingham}{%
+        March 2022 - March 2024
+    }{
+        Inviting speakers for the weekly research seminar, communicating with
+        both speakers, hosts and audience, and setting up and maintaining the
+        room during talks; also campaigned for extra funding to provide
+        accommodation for speakers.
+    }{item 8}
+    \node[
+        left=\timedotsep of item 9.south west,
+        invisibletimedot
+    ](time 9){};
+    \draw (time 8.center) -- (time 9.center);
+
+\end{tikzpicture}

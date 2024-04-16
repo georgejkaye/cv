@@ -11,12 +11,18 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
-      - name: Package the cv
+      - name: Package the programming cv
         uses: georgejkaye/latex-packager@v1.0
         with:
           input-dir: .
-          main: main
-          project-name: cv
+          main: main-programming
+          project-name: cv-programming
+      - name: Package the research cv
+        uses: georgejkaye/latex-packager@v1.0
+        with:
+          input-dir: .
+          main: main-research
+          project-name: cv-research
       - name: Set release name
         id: name
         run: echo "name=$(date +'%Y-%m-%d-%H%M')" >> $GITHUB_OUTPUT
@@ -28,23 +34,41 @@ jobs:
         with:
           release_name: Latest draft
           tag_name: ${{ steps.name.outputs.name }}
-      - name: Upload cv to the release
+      - name: Upload programming cv to the release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: main.pdf
-          asset_name: main-${{ steps.name.outputs.name }}.pdf
+          asset_path: main-programming.pdf
+          asset_name: cv-programming-${{ steps.name.outputs.name }}.pdf
           asset_content_type: pdf
-      - name: Upload the zip to the release
+      - name: Upload research cv to the release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: cv.zip
-          asset_name: ${{ github.event.repository.name }}-${{ steps.name.outputs.name }}.zip
+          asset_path: main-research.pdf
+          asset_name: cv-research-${{ steps.name.outputs.name }}.pdf
+          asset_content_type: pdf
+      - name: Upload the programming zip to the release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: cv-programming.zip
+          asset_name: ${{ github.event.repository.name }}-programming-${{ steps.name.outputs.name }}.zip
+          asset_content_type: zip
+      - name: Upload the research zip to the release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: cv-research.zip
+          asset_name: ${{ github.event.repository.name }}-research-${{ steps.name.outputs.name }}.zip
           asset_content_type: zip
       - name: Delete older releases
         uses: dev-drprasad/delete-older-releases@v0.2.0
