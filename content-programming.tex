@@ -57,21 +57,65 @@
         shift={($(current page.north west)%
                     +(\sidewidth+2.75\margin+\timedotsep,-0.5\margin)$)}]
     \hypersetup{urlcolor=linkonlight}
-    \node[sectionTitle] at (0,0) (title 1) {\cvsection{Education}};
-    \node[left=\timedotsep of title 1,headerIcon] {\faGraduationCap};
+
+    \node[sectionTitle] at (0,0) (title 1) {\cvsection{Experience}};
+    \node[left=\timedotsep of title 1,headerIcon] {\faBriefcase};
     \sectionstroke{title 1}
+    \experience{Developer}{Acturis Ltd}{%
+        August 2024 - present
+    }{%
+        Working on the quoting engine used by the Acturis
+        appliction, primarily in C\# and Oracle SQL. Additionally used
+        TypeScript/React for the development of internal tools used by both
+        developers and business analysts, and PowerShell for automation of
+        complex tasks such as mutation testing and gathering code quality
+        statistics.
+    }{title 1}
+    \experience{Teaching Assistant}{University of Birmingham}{%
+        September 2019 - June 2024
+    }{%
+        Supported the
+        \textit{Logical and Mathematical Foundations for Computer Science},
+        \textit{Theories of Computation}, and
+        \textit{Compilers \& Languages} modules.
+        Have led regular group tutorials for 10-20 students and distributed
+        the marking of assignments between the teaching assistants.
+        Received awards in 2022 for going above and beyond my duties.
+    }{item 1}
+    \experience{Research Intern}{Huawei R\&D, Edinburgh}{%
+        January 2021 - November 2023
+    }{%
+        Worked as part of the Programming Languages Lab in designing a hardware
+        description language in Huawei's new programming language.
+        Developed compiler optimisations for the new programming
+        language using the large \textsc{C++} codebase.
+    }{item 2}
+    \node[
+        left=\timedotsep of item 3.south west,
+        invisibletimedot
+    ](time 3)
+    {};
+    \draw (time 1.center) -- (time 3.center);
+
+    %%%%%%%%%%%
+    % Education
+    %%%%%%%%%%%
+
+    \node[below=0.6cm of item 3.south west,sectionTitle] (title 2) {\cvsection{Education}};
+    \node[left=\timedotsep of title 2,headerIcon] {\faGraduationCap};
+    \node[below=0.6cm of item 3.south west,sectionTitle] (title 1 dummy) {\phantom{\cvsection{Education}}};
+    \sectionstroke{title 2}
     \education{%
         PhD in Computer Science, University of Birmingham%
     }{%
         September 2019 - July 2024
     }{%
-        Using category theory to define a \emph{fully compositional framework}
-        for digital circuits with delay and feedback, leading to a
-        \emph{operational semantics} and \emph{equational theory} for circuits,
-        as well as allowing for automatic reasoning about them with
-        \emph{graph rewriting}.
+        Worked on a project entitled \emph{Foundations of Digital Circuits},
+        Passed with minor corrections in September 2024.
+        During this time presented technical talks to a variety of
+        audiences at international conferences.
     }{%
-        title 1%
+        title 2%
     }
     \education{%
         MSci in Computer Science, University of Birmingham (Honours, Class I)%
@@ -82,7 +126,7 @@
         Compilers \& Languages, Functional Programming, Software Workshop,
         C/C++, Operating Systems, Teaching CS In Schools
     }{%
-        item 1%
+        item 4%
     }
     \education{Malmesbury School}{September 2008 - May 2015}{%
         \textbf{A-levels:}
@@ -92,56 +136,20 @@
         \textbf{GCSEs:}
         7A*s, 4As (including English and Maths)
     }{%
-        item 2%
+        item 5%
     }
     \node[
-        left=\timedotsep of item 3.south west,
+        left=\timedotsep of item 6.south west,
         invisibletimedot
-    ](time 4)
+    ](time 5)
     {};
-    \draw (time 1.center) to (time 4.center);
+    \draw (time 4.center) to (time 5.center);
 
-    \node[below=0.6cm of item 3.south west,sectionTitle] (title 2) {\cvsection{Experience}};
-    \node[left=\timedotsep of title 2,headerIcon] {\faBriefcase};
-    \node[below=0.6cm of item 3.south west,sectionTitle] (title 2 dummy) {\phantom{\cvsection{Education}}};
-    \sectionstroke{title 2}
-    \experience{Teaching Assistant}{University of Birmingham}{%
-        September 2019 - June 2024
-    }{%
-        Supporting the
-        \textit{Logical and Mathematical Foundations for Computer Science},
-        \textit{Theories of Computation}, and
-        \textit{Compilers \& Languages} modules.
-        Have led regular group tutorials for 10-20 students and distributed
-        the marking of assignments between the teaching assistants.
-        Received awards in 2022 for going above and beyond my duties.
-    }{title 2}
-    \experience{Research Assistant}{University of Birmingham}{%
-        November 2023 - June 2024
-    }{%
-        Integrating the School of Computer Science's research student progress
-        system into the existing \textsc{OCaml} system used for monitoring
-        undergraduate progress.
-    }{item 4}
-    \experience{Research Intern}{Huawei R\&D, Edinburgh}{%
-        January 2021 - November 2023
-    }{%
-        Worked as part of the Programming Languages Lab in designing a hardware
-        description language in Huawei's new programming language.
-        Developed compiler optimisations for the new programming
-        language using the large \textsc{C++} codebase.
-    }{item 5}
-    \experience{Supermarket Assistant (part-time)}{Waitrose Malmesbury}{%
-        July 2014 - September 2019
-    }{}{item 6}
-    \node[
-        left=\timedotsep of item 7.south west,
-        invisibletimedot
-    ](time 8)
-    {};
-    \draw (time 4.center) -- (time 8.center);
+    %%%%%%
+    % Volunteering
+    %%%%%%%
 
-    \node[below=0.6cm of item 7.south west,sectionTitle] (title 3) {\cvsection{Volunteering}};
+    \node[below=0.6cm of item 6.south west,sectionTitle] (title 3) {\cvsection{Volunteering}};
     \node[left=\timedotsep of title 3,headerIcon] {\faRocket};
     \node[below=0.6cm of item 3.south west,sectionTitle] (title 3 dummy) {\phantom{\cvsection{Volunteering}}};
     \sectionstroke{title 3}
@@ -165,7 +173,7 @@
         room during talks; also campaigned for extra funding to provide
         accommodation for speakers.
 
-    }{item 8}
+    }{item 7}
     \education{Local Helper, Midlands Graduate School 2023}{%
         02-06 April 2023
     }{%
@@ -174,7 +182,7 @@
         technical assistance throughout the week.
 
         URL: \url{https://www.cs.bham.ac.uk/~mhe/events/MGS23/}
-    }{item 9}
+    }{item 8}
     \education{%
         Further Years Rep, Staff/Research Student Consultative Committee
     }{%
@@ -185,11 +193,11 @@
         restoring student profiles to the university website,
         helping reform the progress monitoring system, and improving the
         School's cleaning policies.
-    }{item 10}
+    }{item 9}
     \node[
-        left=\timedotsep of item 11.south west,
+        left=\timedotsep of item 10.south west,
         invisibletimedot
-    ](time 11){};
-    \draw (time 8.center) -- (time 11.center);
+    ](time 10){};
+    \draw (time 7.center) -- (time 10.center);
 
 \end{tikzpicture}
