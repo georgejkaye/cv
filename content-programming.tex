@@ -1,5 +1,5 @@
 \newcounter{educations}
-\newcommand{\educationtext}[3]{{\textbf{#1}}\\[0.15em]\textit{#2}\\[0.1em]\small{#3}}
+\newcommand{\educationtext}[3]{{\normalsize\textbf{#1}}\\[0.15em]\textit{#2}\\[0.1em]\small{#3}}
 \newcommand{\education}[4]{%
     \stepcounter{educations}
     \pgfmathtruncatemacro{\itemno}{\value{educations}}
@@ -19,7 +19,7 @@
     {};
 }
 \newcounter{experiences}
-\newcommand{\experiencetext}[4]{{\textbf{#1, #2}}\\[0.15em]\textit{#3}\\[0.1em]{\small#4}}
+\newcommand{\experiencetext}[4]{{\normalsize\textbf{#1, #2}}\\[0.15em]\textit{#3}\\[0.1em]{\small#4}}
 \newcommand{\experience}[5]{%
     \stepcounter{educations}
     \pgfmathtruncatemacro{\itemno}{\value{educations}}
@@ -64,12 +64,15 @@
     \experience{Developer}{Acturis Ltd}{%
         August 2024 - present
     }{%
-        Working on the quoting engine used by the Acturis
-        appliction, primarily in C\# and Oracle SQL. Additionally used
-        TypeScript/React for the development of internal tools used by both
-        developers and business analysts, and PowerShell for automation of
-        complex tasks such as mutation testing and gathering code quality
-        statistics.
+        Currently working as part of an agile backend team on the dual entity
+        quoting engine used by the the Acturis application,
+        primarily using C\# and Oracle SQL for development and
+        Bamboo for continuous integration, automated testing, and deployment.
+        Additionally using TypeScript/React for internal
+        tools aimed at developers and business analysts, along with PowerShell
+        and Python scripts for automation of complex tasks such as mutation
+        testing, gathering code quality statistics for company KPIs, and
+        analysing the team's timelogging data.
     }{title 1}
     \experience{Teaching Assistant}{University of Birmingham}{%
         September 2019 - June 2024
@@ -85,10 +88,10 @@
     \experience{Research Intern}{Huawei R\&D, Edinburgh}{%
         January 2021 - November 2023
     }{%
-        Worked as part of the Programming Languages Lab in designing a hardware
-        description language in Huawei's new programming language.
-        Developed compiler optimisations for the new programming
-        language using the large \textsc{C++} codebase.
+        Worked as part of the Programming Languages Lab in designing and
+        implementing a hardware description language in Huawei's new open-source
+        programming language Cangjie, and also developed compiler optimisations
+        for the new language in \textsc{C++}.
     }{item 2}
     \node[
         left=\timedotsep of item 3.south west,
@@ -101,7 +104,7 @@
     % Education
     %%%%%%%%%%%
 
-    \node[below=0.6cm of item 3.south west,sectionTitle] (title 2) {\cvsection{Education}};
+    \node[below=1cm of item 3.south west,sectionTitle] (title 2) {\cvsection{Education}};
     \node[left=\timedotsep of title 2,headerIcon] {\faGraduationCap};
     \node[below=0.6cm of item 3.south west,sectionTitle] (title 1 dummy) {\phantom{\cvsection{Education}}};
     \sectionstroke{title 2}
@@ -110,10 +113,11 @@
     }{%
         September 2019 - July 2024
     }{%
-        Worked on a project entitled \emph{Foundations of Digital Circuits},
-        Passed with minor corrections in September 2024.
+        Worked on a project entitled \emph{Foundations of Digital Circuits};
+        passed with minor corrections in September 2024.
         During this time presented technical talks to a variety of
-        audiences at international conferences.
+        audiences at international conferences, as well as organising numerous
+        aspects of the research group and their online presence.
     }{%
         title 2%
     }
@@ -149,7 +153,7 @@
     % Volunteering
     %%%%%%%
 
-    \node[below=0.6cm of item 6.south west,sectionTitle] (title 3) {\cvsection{Volunteering}};
+    \node[below=1cm of item 6.south west,sectionTitle] (title 3) {\cvsection{Volunteering}};
     \node[left=\timedotsep of title 3,headerIcon] {\faRocket};
     \node[below=0.6cm of item 3.south west,sectionTitle] (title 3 dummy) {\phantom{\cvsection{Volunteering}}};
     \sectionstroke{title 3}
@@ -174,15 +178,15 @@
         accommodation for speakers.
 
     }{item 7}
-    \education{Local Helper, Midlands Graduate School 2023}{%
-        02-06 April 2023
-    }{%
-        Assisted with the \emph{String Diagrams} course, guided students
-        around campus and to/from various social events, plus provided
-        technical assistance throughout the week.
+    % \education{Local Helper, Midlands Graduate School 2023}{%
+    %     02-06 April 2023
+    % }{%
+    %     Assisted with the \emph{String Diagrams} course, guided students
+    %     around campus and to/from various social events, plus provided
+    %     technical assistance throughout the week.
 
-        URL: \url{https://www.cs.bham.ac.uk/~mhe/events/MGS23/}
-    }{item 8}
+    %     URL: \url{https://www.cs.bham.ac.uk/~mhe/events/MGS23/}
+    % }{item 8}
     \education{%
         Further Years Rep, Staff/Research Student Consultative Committee
     }{%
@@ -193,11 +197,11 @@
         restoring student profiles to the university website,
         helping reform the progress monitoring system, and improving the
         School's cleaning policies.
-    }{item 9}
+    }{item 8}
     \node[
-        left=\timedotsep of item 10.south west,
+        left=\timedotsep of item 9.south west,
         invisibletimedot
-    ](time 10){};
-    \draw (time 7.center) -- (time 10.center);
+    ](time 9){};
+    \draw (time 7.center) -- (time 9.center);
 
 \end{tikzpicture}
