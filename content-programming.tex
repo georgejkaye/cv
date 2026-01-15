@@ -58,40 +58,41 @@
                     +(\sidewidth+2.75\margin+\timedotsep,-0.5\margin)$)}]
     \hypersetup{urlcolor=linkonlight}
 
-    \node[sectionTitle] at (0,0) (title 1) {\cvsection{Experience}};
+    \node[sectionTitle] at (0,-0.5) (title 1) {\cvsection{Experience}};
     \node[left=\timedotsep of title 1,headerIcon] {\faBriefcase};
     \sectionstroke{title 1}
     \experience{Developer}{Acturis Ltd}{%
         August 2024 - present
     }{%
-        Currently working as part of an agile backend team on the dual entity
+        Currently working as part of an agile backend team, interacting with
+        business analysts to maintain and enhance the dual entity
         quoting engine used by the the Acturis application.
         Development is primarily using C\# and Oracle SQL, alongside Atlassian
-        Bamboo for continuous integration, automated testing, and deployment.
-        Also using TypeScript/React for internal
-        tools aimed at developers and business analysts, and PowerShell/Python
+        Bamboo for CI/CD; Elastic/Kibana for logging; TypeScript/React for
+        frontend tooling for use by business analysts; and PowerShell/Python
         scripts for automation of complex tasks such as mutation
-        testing, gathering code quality statistics for company KPIs, and
-        analysing the team's timelogging data.
+        testing and gathering company KPI metrics.
     }{title 1}
-    \experience{Teaching Assistant}{University of Birmingham}{%
-        September 2019 - June 2024
-    }{%
-        Supported the
-        \textit{Logical and Mathematical Foundations for Computer Science},
-        \textit{Theories of Computation}, and
-        \textit{Compilers \& Languages} modules.
-        Have led regular group tutorials for 10-20 students and distributed
-        the marking of assignments between the teaching assistants.
-        Received awards in 2022 for going above and beyond my duties.
-    }{item 1}
     \experience{Research Intern}{Huawei R\&D, Edinburgh}{%
         January 2021 - November 2023
     }{%
-        Worked as part of the Programming Languages Lab in designing and
+        Worked in the Programming Languages Lab, designing and
         implementing a hardware description language in Huawei's new open-source
-        programming language Cangjie, and also developed compiler optimisations
-        for the new language in \textsc{C++}.
+        programming language Cangjie; also developed compiler optimisations
+        for the new language in C++.
+        Joined a group studying Rust as part of Huawei's partnership with
+        the Rust Foundation.
+    }{item 1}
+    \experience{Teaching Assistant}{University of Birmingham}{%
+        September 2019 - June 2024
+    }{%
+        Led aspects of the \textit{Compilers \& Languages} modules, including
+        teaching final year students OCaml; furthermore supported the
+        \textit{Logical and Mathematical Foundations for Computer Science} and
+        \textit{Theories of Computation} modules.
+        Have led regular group tutorials for 10-20 students and distributed
+        the marking of assignments between the teaching assistants.
+        Received awards in 2022 for going above and beyond my duties.
     }{item 2}
     \node[
         left=\timedotsep of item 3.south west,
@@ -113,8 +114,9 @@
     }{%
         September 2019 - July 2024
     }{%
-        Worked on a project entitled \emph{Foundations of Digital Circuits};
-        passed with minor corrections in September 2024.
+        Worked on a project entitled \emph{Foundations of Digital Circuits}:
+        applying techniques from programming language and compiler research
+        to hardware, motivated by applications in optimisation and verification.
         During this time presented technical talks to a variety of
         audiences at international conferences, as well as organising numerous
         aspects of the research group and their online presence.
@@ -127,8 +129,8 @@
         September 2015 - July 2019
     }{%
         Studied modules including
-        Compilers \& Languages, Functional Programming, Software Workshop,
-        C/C++, Operating Systems, Teaching CS In Schools
+        Compilers \& Languages, Functional Programming, Computer-Aided Verification,
+        Software Workshop, C/C++, Operating Systems
     }{%
         item 4%
     }
@@ -187,19 +189,19 @@
 
     %     URL: \url{https://www.cs.bham.ac.uk/~mhe/events/MGS23/}
     % }{item 8}
-    \education{%
-        Further Years Rep, Staff/Research Student Consultative Committee
-    }{%
-        September 2022 - July 2024
-    }{%
-        Championing research students' issues:
-        successes include the preservation of permanent student desks,
-        restoring student profiles to the university website,
-        helping reform the progress monitoring system, and improving the
-        School's cleaning policies.
-    }{item 8}
+    % \education{%
+    %     Further Years Rep, Staff/Research Student Consultative Committee
+    % }{%
+    %     September 2022 - July 2024
+    % }{%
+    %     Championing research students' issues:
+    %     successes include the preservation of permanent student desks,
+    %     restoring student profiles to the university website,
+    %     helping reform the progress monitoring system, and improving the
+    %     School's cleaning policies.
+    % }{item 8}
     \node[
-        left=\timedotsep of item 9.south west,
+        left=\timedotsep of item 8.south west,
         invisibletimedot
     ](time 9){};
     \draw (time 7.center) -- (time 9.center);
