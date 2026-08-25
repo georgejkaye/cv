@@ -58,30 +58,33 @@
                     +(\sidewidth+2.75\margin+\timedotsep,-0.5\margin)$)}]
     \hypersetup{urlcolor=linkonlight}
 
-    \node[sectionTitle] at (0,-0.5) (title 1) {\cvsection{Experience}};
+    \node[sectionTitle] at (0,-0) (title 1) {\cvsection{Experience}};
     \node[left=\timedotsep of title 1,headerIcon] {\faBriefcase};
     \sectionstroke{title 1}
     \experience{Developer}{Acturis Ltd}{%
         August 2024 - present
     }{%
-        Currently working as part of an agile backend team, interacting with
-        business analysts to maintain and enhance the dual entity
-        quoting engine used by the the Acturis application.
-        Development is primarily using C\# and Oracle SQL, alongside Atlassian
-        Bamboo for CI/CD; Elastic/Kibana for logging; TypeScript/React for
-        frontend tooling for use by business analysts; and PowerShell/Python
-        scripts for automation of complex tasks such as mutation
-        testing and gathering company KPI metrics.
+        Working as part of an agile team on the dual entity
+        quoting and documents engine used by the Acturis application, written
+        predominantly in C\# and Python.
+        Currently lead the design, implementation and rollout of large projects,
+        working with client-facing business analysts and other developers to
+        gather requirements, scope and spec changes, and coordinate timelines.
+        Part of a team who maintain and improve our CI/CD
+        processes, with a focus on increasing automation in our workflow.
     }{title 1}
     \experience{Research Intern}{Huawei R\&D, Edinburgh}{%
         January 2021 - November 2023
     }{%
-        Worked in the Programming Languages Lab, designing and
-        implementing a hardware description language in Huawei's new open-source
-        programming language Cangjie; also developed compiler optimisations
-        for the new language in C++.
-        Joined a group studying Rust as part of Huawei's partnership with
-        the Rust Foundation.
+        Worked in the Programming Languages Lab on the compiler for
+        Huawei's new open-source programming language Cangjie, written in C++
+        with an LLVM backend.
+        Work primarily involved developing optimisations for the new language
+        using a novel graph-based intermediate representation.
+        Led a project to implement a domain-specific language in Cangjie for
+        designing and reasoning with hardware based on programming
+        languages research by myself and others, and also joined a
+        group studying Rust as part of Huawei's work with the Rust Foundation.
     }{item 1}
     \experience{Teaching Assistant}{University of Birmingham}{%
         September 2019 - June 2024
@@ -105,7 +108,7 @@
     % Education
     %%%%%%%%%%%
 
-    \node[below=1cm of item 3.south west,sectionTitle] (title 2) {\cvsection{Education}};
+    \node[below=0.75cm of item 3.south west,sectionTitle] (title 2) {\cvsection{Education}};
     \node[left=\timedotsep of title 2,headerIcon] {\faGraduationCap};
     \node[below=0.6cm of item 3.south west,sectionTitle] (title 1 dummy) {\phantom{\cvsection{Education}}};
     \sectionstroke{title 2}
@@ -117,9 +120,10 @@
         Worked on a project entitled \emph{Foundations of Digital Circuits}:
         applying techniques from programming language and compiler research
         to hardware, motivated by applications in optimisation and verification.
-        During this time presented technical talks to a variety of
-        audiences at international conferences, as well as organising numerous
-        aspects of the research group and their online presence.
+        Implemented some aspects of my research for experimentation purposes
+        using OCaml and ReScript.
+        Have presented technical talks on this research to a variety of
+        audiences at international conferences both academic and industrial.
     }{%
         title 2%
     }
@@ -130,7 +134,7 @@
     }{%
         Studied modules including
         Compilers \& Languages, Functional Programming, Computer-Aided Verification,
-        Software Workshop, C/C++, Operating Systems
+        Software Workshop, C/C++, and Operating Systems.
     }{%
         item 4%
     }
@@ -155,18 +159,18 @@
     % Volunteering
     %%%%%%%
 
-    \node[below=1cm of item 6.south west,sectionTitle] (title 3) {\cvsection{Volunteering}};
+    \node[below=0.75cm of item 6.south west,sectionTitle] (title 3) {\cvsection{Volunteering}};
     \node[left=\timedotsep of title 3,headerIcon] {\faRocket};
     \node[below=0.6cm of item 3.south west,sectionTitle] (title 3 dummy) {\phantom{\cvsection{Volunteering}}};
     \sectionstroke{title 3}
     \education{Local Organiser, Twelfth Symposium on Compositional Structures}{%
         15-16 April 2024
     }{
-        Raised funding to host the next edition of this conference at
+        Raised funding to host the an edition of this conference at
         Birmingham.
-        Responsibilities included maintaining the conference webpage,
-        organising social events, booking and setting up rooms, arranging
-        catering, and working with the committee to assemble the selection of
+        Responsibilities included arranging funding, maintaining the conference
+        webpage, organising social events and catering, booking and setting up rooms,
+        and working with the committee to assemble the selection of
         talks.
 
         URL: \url{https://www.cl.cam.ac.uk/events/syco/12/}
@@ -174,7 +178,7 @@
     \education{Theory Seminar Organiser, University of Birmingham}{%
         March 2022 - March 2024
     }{
-        Inviting speakers for the weekly research seminar, communicating with
+        Organised the weekly research seminar, communicating with
         both speakers, hosts and audience, and setting up and maintaining the
         room during talks; also campaigned for extra funding to provide
         accommodation for speakers.
