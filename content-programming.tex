@@ -1,8 +1,15 @@
-\newcounter{educations}
-\newcommand{\educationtext}[3]{{\normalsize\textbf{#1}}\\[0.15em]\textit{#2}\\[0.1em]\small{#3}}
+\newcounter{entries}
+\newcommand{\educationtext}[3]{%
+{\normalsize\textbf{#1}}\\[0.1em]
+\textit{#2}\\[0.05em]
+{\fontsize{9.5}{12}\selectfont
+\setlength{\parskip}{0.4em}
+#3
+}%
+}
 \newcommand{\education}[4]{%
-    \stepcounter{educations}
-    \pgfmathtruncatemacro{\itemno}{\value{educations}}
+    \stepcounter{entries}
+    \pgfmathtruncatemacro{\itemno}{\value{entries}}
     \node[
         below=\sectionsep of #4.south west,
         eventdottext]
@@ -18,11 +25,17 @@
     ](time \itemno)
     {};
 }
-\newcounter{experiences}
-\newcommand{\experiencetext}[4]{{\normalsize\textbf{#1, #2}}\\[0.15em]\textit{#3}\\[0.1em]{\small#4}}
+\newcommand{\experiencetext}[4]{%
+{\normalsize\textbf{#1, #2}}\\[0.1em]
+\textit{#3}\\[0.05em]
+{\fontsize{9.5}{12}\selectfont
+\setlength{\parskip}{0.4em}
+#4
+}%
+}
 \newcommand{\experience}[5]{%
-    \stepcounter{educations}
-    \pgfmathtruncatemacro{\itemno}{\value{educations}}
+    \stepcounter{entries}
+    \pgfmathtruncatemacro{\itemno}{\value{entries}}
     \node[
         below=\sectionsep of #5.south west,
         eventdottext]
@@ -64,38 +77,48 @@
     \experience{Developer}{Acturis Ltd}{%
         August 2024 - present
     }{%
-        Working as part of an agile team on the dual entity
-        quoting and documents engine used by the Acturis application, written
-        predominantly in C\# and Python.
-        Currently lead the design, implementation and rollout of large projects,
-        working with client-facing business analysts and other developers to
-        gather requirements, scope and spec changes, and coordinate timelines.
-        Part of a team who maintain and improve our CI/CD
-        processes, with a focus on increasing automation in our workflow.
+        Work on the dual-entity quoting and documents engine used by the Acturis
+        application, developing predominantly in C\# and Python within an agile
+        team.
+
+        Lead the design, implementation and rollout of large projects, working
+        with client-facing business analysts and other developers to gather
+        requirements, scope changes, produce technical specifications and
+        coordinate delivery timelines.
+
+        Mentor and support other developers through onboarding, technical guidance,
+        code reviews and knowledge sharing, helping colleagues develop their technical
+        skills and confidence.
+
+        Contribute to the maintenance and improvement of CI/CD processes, with a
+        focus on increasing automation across the development workflow.
     }{title 1}
     \experience{Research Intern}{Huawei R\&D, Edinburgh}{%
         January 2021 - November 2023
     }{%
-        Worked in the Programming Languages Lab on the compiler for
-        Huawei's new open-source programming language Cangjie, written in C++
-        with an LLVM backend.
-        Work primarily involved developing optimisations for the new language
-        using a novel graph-based intermediate representation.
-        Led a project to implement a domain-specific language in Cangjie for
-        designing and reasoning with hardware based on programming
-        languages research by myself and others, and also joined a
-        group studying Rust as part of Huawei's work with the Rust Foundation.
+        Worked on the compiler for Huawei's
+        open-source Cangjie programming language, written in C++ with an LLVM
+        backend.
+
+        Led the development of a domain-specific language in Cangjie for
+        designing and reasoning about hardware, taking the project
+        from initial research and requirements through to a working
+        implementation.
+
+        Developed compiler optimisations for the new language, tackling complex
+        problems in compiler engineering and language implementation.
     }{item 1}
     \experience{Teaching Assistant}{University of Birmingham}{%
         September 2019 - June 2024
     }{%
-        Led aspects of the \textit{Compilers \& Languages} modules, including
-        teaching final year students OCaml; furthermore supported the
+        Led teaching across the \textit{Compilers \& Languages},
         \textit{Logical and Mathematical Foundations for Computer Science} and
-        \textit{Theories of Computation} modules.
-        Have led regular group tutorials for 10-20 students and distributed
-        the marking of assignments between the teaching assistants.
-        Received awards in 2022 for going above and beyond my duties.
+        \textit{Theories of Computation} modules, running tutorials for groups
+        of 10--20 students and coordinating assignment marking across teaching
+        assistants.
+
+        Received awards in 2022 for going above and beyond my teaching
+        responsibilities.
     }{item 2}
     \node[
         left=\timedotsep of item 3.south west,
@@ -108,48 +131,34 @@
     % Education
     %%%%%%%%%%%
 
-    \node[below=0.75cm of item 3.south west,sectionTitle] (title 2) {\cvsection{Education}};
+    \node[below=0.65cm of item 3.south west,sectionTitle] (title 2) {\cvsection{Education}};
     \node[left=\timedotsep of title 2,headerIcon] {\faGraduationCap};
-    \node[below=0.6cm of item 3.south west,sectionTitle] (title 1 dummy) {\phantom{\cvsection{Education}}};
+    \node[below=0.45cm of item 3.south west,sectionTitle] (title 1 dummy) {\phantom{\cvsection{Education}}};
     \sectionstroke{title 2}
     \education{%
         PhD in Computer Science, University of Birmingham%
     }{%
-        September 2019 - July 2024
+        September 2019 - July 2024%
     }{%
-        Worked on a project entitled \emph{Foundations of Digital Circuits}:
-        applying techniques from programming language and compiler research
-        to hardware, motivated by applications in optimisation and verification.
-        Implemented some aspects of my research for experimentation purposes
-        using OCaml and ReScript.
-        Have presented technical talks on this research to a variety of
-        audiences at international conferences both academic and industrial.
-    }{%
-        title 2%
-    }
+        Worked on \emph{Foundations of Digital Circuits}, applying techniques
+        from programming language and compiler research to hardware optimisation
+        and verification.
+        Implemented research prototypes in OCaml and ReScript for
+        experimentation and evaluation. Presented technical work to
+        academic and industrial audiences at international conferences.
+    }{title 2}%
     \education{%
         MSci in Computer Science, University of Birmingham (Honours, Class I)%
     }{%
         September 2015 - July 2019
     }{%
-        Studied modules including
-        Compilers \& Languages, Functional Programming, Computer-Aided Verification,
-        Software Workshop, C/C++, and Operating Systems.
-    }{%
-        item 4%
-    }
-    \education{Malmesbury School}{September 2008 - May 2015}{%
-        \textbf{A-levels:}
-        Maths A*, Further Maths A*, Physics A, Religious Studies (AS) A,
-        Music (AS) B
-        \,
-        \textbf{GCSEs:}
-        7A*s, 4As (including English and Maths)
-    }{%
-        item 5%
-    }
+        First Class Honours. Relevant modules included Compilers \& Languages,
+        Functional Programming, Computer-Aided Verification, C/C++, and
+        Operating Systems.
+    }{item 4}%
+
     \node[
-        left=\timedotsep of item 6.south west,
+        left=\timedotsep of item 5.south west,
         invisibletimedot
     ](time 5)
     {};
@@ -159,55 +168,20 @@
     % Volunteering
     %%%%%%%
 
-    \node[below=0.75cm of item 6.south west,sectionTitle] (title 3) {\cvsection{Volunteering}};
+    \node[below=0.65cm of item 5.south west,sectionTitle] (title 3) {\cvsection{Volunteering}};
     \node[left=\timedotsep of title 3,headerIcon] {\faRocket};
-    \node[below=0.6cm of item 3.south west,sectionTitle] (title 3 dummy) {\phantom{\cvsection{Volunteering}}};
+    \node[below=0.45cm of item 3.south west,sectionTitle] (title 3 dummy) {\phantom{\cvsection{Volunteering}}};
     \sectionstroke{title 3}
     \education{Local Organiser, Twelfth Symposium on Compositional Structures}{%
-        15-16 April 2024
-    }{
-        Raised funding to host the an edition of this conference at
-        Birmingham.
-        Responsibilities included arranging funding, maintaining the conference
-        webpage, organising social events and catering, booking and setting up rooms,
-        and working with the committee to assemble the selection of
-        talks.
-
-        URL: \url{https://www.cl.cam.ac.uk/events/syco/12/}
+        15-16 April 2024}{
+        Raised funding to host this conference in Birmingham and coordinated
+        the website, social events, catering, room bookings, setup and talk
+        selection with the organising committee.
     }{title 3}
-    \education{Theory Seminar Organiser, University of Birmingham}{%
-        March 2022 - March 2024
-    }{
-        Organised the weekly research seminar, communicating with
-        both speakers, hosts and audience, and setting up and maintaining the
-        room during talks; also campaigned for extra funding to provide
-        accommodation for speakers.
-
-    }{item 7}
-    % \education{Local Helper, Midlands Graduate School 2023}{%
-    %     02-06 April 2023
-    % }{%
-    %     Assisted with the \emph{String Diagrams} course, guided students
-    %     around campus and to/from various social events, plus provided
-    %     technical assistance throughout the week.
-
-    %     URL: \url{https://www.cs.bham.ac.uk/~mhe/events/MGS23/}
-    % }{item 8}
-    % \education{%
-    %     Further Years Rep, Staff/Research Student Consultative Committee
-    % }{%
-    %     September 2022 - July 2024
-    % }{%
-    %     Championing research students' issues:
-    %     successes include the preservation of permanent student desks,
-    %     restoring student profiles to the university website,
-    %     helping reform the progress monitoring system, and improving the
-    %     School's cleaning policies.
-    % }{item 8}
     \node[
-        left=\timedotsep of item 8.south west,
+        left=\timedotsep of item 6.south west,
         invisibletimedot
     ](time 9){};
-    \draw (time 7.center) -- (time 9.center);
+    \draw (time 6.center) -- (time 9.center);
 
 \end{tikzpicture}

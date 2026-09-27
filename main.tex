@@ -6,10 +6,15 @@
 \usepackage{enumitem}
 \usepackage{todonotes}
 \usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{fontspec}
 
-\usepackage[sfdefault]{FiraSans}
-\usepackage[T1]{fontenc}
-\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+\setmainfont{IBM Plex Sans}[
+  UprightFont    = *,
+  ItalicFont     = * Italic,
+  BoldFont       = * SemiBold,
+  BoldItalicFont = * SemiBold Italic
+]
 \usepackage{fontawesome5}
 \usepackage{calc}
 \usepackage{tikz}
@@ -32,9 +37,13 @@
 \makeatletter
 \def\cv@hrulefill{{\color{accent}\leavevmode\leaders\hrule height 1pt\hfill\kern\z@}}
 
-% line before and after text
-\NewDocumentCommand{\ruleline}{m}{\par\noindent\raisebox{\baselineskip/4}{\makebox[\linewidth]{\cv@hrulefill\hspace{1ex}\raisebox{-\baselineskip/4}{#1}\hspace{1ex}\cv@hrulefill}}}
-\makeatother
+\NewDocumentCommand{\ruleline}{m}{%
+  \par\noindent
+  {\large\textbf{#1}}%
+  \hspace{0.8em}%
+  \cv@hrulefill
+  \par
+}
 
 \usepackage[colorlinks=true]{hyperref}
 
