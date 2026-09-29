@@ -28,8 +28,8 @@ jobs:
       - name: Add log as artifact
         uses: actions/upload-artifact@v7
         with:
-            name: main-programming.log
-            path: main-programming.log
+            name: log
+            path: cv-programming.log
         if: always()
       - name: Set release name
         id: name
