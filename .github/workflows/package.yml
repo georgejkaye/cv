@@ -42,7 +42,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: main-programming.pdf
+          asset_path: cv-programming.pdf
           asset_name: cv-programming-${{ steps.name.outputs.name }}.pdf
           asset_content_type: pdf
       - name: Upload research cv to the release
@@ -51,7 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: main-research.pdf
+          asset_path: cv-research.pdf
           asset_name: cv-research-${{ steps.name.outputs.name }}.pdf
           asset_content_type: pdf
       - name: Upload the programming zip to the release
