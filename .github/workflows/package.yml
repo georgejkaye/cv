@@ -12,25 +12,19 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Package the programming cv
-        uses: georgejkaye/latex-packager@v1.9.1
+        uses: georgejkaye/latex-packager@v1.9.2
         with:
           input-dir: .
           main: main-programming
           project-name: cv-programming
           engine: lualatex
       - name: Package the research cv
-        uses: georgejkaye/latex-packager@v1.9.1
+        uses: georgejkaye/latex-packager@v1.9.2
         with:
           input-dir: .
           main: main-research
           project-name: cv-research
           engine: lualatex
-      - name: Add log as artifact
-        uses: actions/upload-artifact@v7
-        with:
-            name: log
-            path: cv-programming.log
-        if: always()
       - name: Set release name
         id: name
         run: echo "name=$(date +'%Y-%m-%d-%H%M')" >> $GITHUB_OUTPUT
