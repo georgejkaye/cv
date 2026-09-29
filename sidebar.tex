@@ -2,111 +2,108 @@
   \fill[sidebar]
   (current page.north west)
   rectangle ++(\sidewidth+2\margin,-\paperheight);
+  \node[anchor=west,inner sep=0pt]
+  at ([xshift={\margin-0.75em}]current page.west) {\begin{minipage}{\sidewidth+0.5\margin}
+
+      \begin{flushleft}
+        % Name
+        \color{White}
+        {\Huge \textbf{George\\Kaye}}
+
+        \vspace{1.75em}
+
+        % About
+        \ruleline{About}
+
+        \vspace{0.9em}
+
+        Software engineer with experience designing, building and delivering complex
+        software systems, with a PhD in Computer Science and a background in
+        compiler engineering and programming languages.
+        Experienced in C\#, C++, Python and a broad range of other languages, with
+        particular strengths in software design, problem solving and technical
+        communication.
+
+        \vspace{1em}
+
+        Experienced in owning projects from requirements and technical design
+        through to implementation and delivery, working closely with stakeholders
+        and other engineers.
+        Strong track record of mentoring and developing developers, leading
+        technical work and communicating complex ideas clearly to both technical and
+        non-technical audiences.
+
+        \vspace{2em}
+
+        % Contact
+        \ruleline{Contact}
+
+        \vspace{0.9em}
+
+        \begin{tikzpicture}[
+            every node/.style={inner sep=0pt, outer sep=0pt}
+          ]
+          \hypersetup{urlcolor=linkondark}
+          \matrix [
+            column 1/.style={anchor=center,contactIcon},
+            column 2/.style={anchor=west,align=left,contactText},
+            column sep=6pt,
+            row sep=6pt
+          ] {
+            \node{\faEnvelope};
+             & \node{\href{mailto:georgejkaye@gmail.com}{georgejkaye@gmail.com}}; \\
+
+            \node{\faGlobe};
+             & \node{\href{https://georgejkaye.com}{georgejkaye.com}}; \\
+
+            \node{\faGithub};
+             & \node{\href{https://github.com/georgejkaye}{github.com/georgejkaye}}; \\
+
+            \node{\faLinkedin};
+             & \node{\href{https://www.linkedin.com/in/georgejkaye}{linkedin.com/in/georgejkaye}}; \\
+
+            \node{\faPhone};
+             & \node{+44 7544 646100};       \\
+          };
+        \end{tikzpicture}
+
+        \vspace{2em}
+
+        \ruleline{Technical skills}
+
+        \vspace{0.25em}
+
+        {\raggedright
+          \fontsize{10}{18}\selectfont
+
+          \textbf{\color{White}Languages}
+
+          \vspace{0.4em}
+
+          C\#, C/C++, Python, Rust, TypeScript, JavaScript, OCaml, F\#, Haskell, Scala, SQL
+
+          \vspace{1.25em}
+
+          \textbf{\color{White}Technologies}
+
+          \vspace{0.4em}
+
+          .NET, Git, Linux, Docker, CI/CD, PostgreSQL, React/Next.js, HTML/CSS, Bash, PowerShell
+
+          \vspace{1.25em}
+
+          \textbf{\color{White}Tools}
+
+          \vspace{0.4em}
+
+          Vim, VS Code, LaTeX
+
+          \vspace{1.2em}
+
+          \par
+        }
+
+      \end{flushleft}
+
+    \end{minipage}};
 \end{tikzpicture}
-
-\vspace*{\fill}
-\hspace{-2.5em}
-\begin{minipage}{\sidewidth+0.5\margin}
-
-  \begin{flushleft}
-    % Name
-    \color{White}
-    {\Huge \textbf{George\\Kaye}}
-
-    \vspace{1.75em}
-
-    % About
-    \ruleline{About}
-
-    \vspace{0.9em}
-
-    Software engineer with experience designing, building and delivering complex
-    software systems, with a PhD in Computer Science and a background in
-    compiler engineering and programming languages.
-    Experienced in C\#, C++, Python and a broad range of other languages, with
-    particular strengths in software design, problem solving and technical
-    communication.
-
-    \vspace{1em}
-
-    Experienced in owning projects from requirements and technical design
-    through to implementation and delivery, working closely with stakeholders
-    and other engineers.
-    Strong track record of mentoring and developing developers, leading
-    technical work and communicating complex ideas clearly to both technical and
-    non-technical audiences.
-
-    \vspace{2em}
-
-    % Contact
-    \ruleline{Contact}
-
-    \vspace{0.9em}
-
-    \begin{tikzpicture}[
-        every node/.style={inner sep=0pt, outer sep=0pt}
-      ]
-      \hypersetup{urlcolor=linkondark}
-      \matrix [
-        column 1/.style={anchor=center,contactIcon},
-        column 2/.style={anchor=west,align=left,contactText},
-        column sep=6pt,
-        row sep=6pt
-      ] {
-        \node{\faEnvelope};
-         & \node{\href{mailto:georgejkaye@gmail.com}{georgejkaye@gmail.com}};  \\
-
-        \node{\faGlobe};
-         & \node{\href{https://georgejkaye.com}{georgejkaye.com}};  \\
-
-        \node{\faGithub};
-         & \node{\href{https://github.com/georgejkaye}{github.com/georgejkaye}};  \\
-
-        \node{\faLinkedin};
-         & \node{\href{https://www.linkedin.com/in/georgejkaye}{linkedin.com/in/georgejkaye}}; \\
-
-        \node{\faPhone};
-         & \node{+44 7544 646100};        \\
-      };
-    \end{tikzpicture}
-
-    \vspace{2em}
-
-    \ruleline{Technical skills}
-
-    \vspace{0.25em}
-
-    {\raggedright
-      \fontsize{10}{18}\selectfont
-
-      \textbf{\color{White}Languages}
-
-      \vspace{0.4em}
-
-      C\#, C/C++, Python, Rust, TypeScript, JavaScript, OCaml, F\#, Haskell, Scala, SQL
-
-      \vspace{1.25em}
-
-      \textbf{\color{White}Technologies}
-
-      \vspace{0.4em}
-
-      .NET, Git, Linux, Docker, CI/CD, PostgreSQL, React/Next.js, HTML/CSS, Bash, PowerShell
-
-      \vspace{1.25em}
-
-      \textbf{\color{White}Tools}
-
-      \vspace{0.4em}
-
-      Vim, VS Code, LaTeX
-
-      \vspace{1.2em}
-
-      \par
-    }
-
-  \end{flushleft}
-
-\end{minipage}
-\vspace*{\fill}
