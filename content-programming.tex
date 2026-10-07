@@ -60,7 +60,7 @@
     \end{scope}
 }
 
-\setlength{\sectionsep}{1.2em}
+\setlength{\sectionsep}{1.25em}
 
 \begin{tikzpicture}[
         every node/.style={
@@ -70,7 +70,7 @@
         remember picture,
         overlay,
         shift={($(current page.north west)%
-                    +(\sidewidth+2.75\margin+\timedotsep,-0.95\margin)$)}]
+                    +(\sidewidth+2.75\margin+\timedotsep,-0.5\margin)$)}]
     \hypersetup{urlcolor=linkonlight}
 
     \node[sectionTitle] at (0,-0) (title 1) {\cvsection{Experience}};
@@ -128,7 +128,7 @@
         approaches.
 
         Received awards in 2022 for going above and beyond my teaching
-        responsibilities.
+        responsibilities.%
     }{item 2}
     \node[
         left=\timedotsep of item 3.south west,
